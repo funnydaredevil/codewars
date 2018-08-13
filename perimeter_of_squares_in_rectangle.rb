@@ -1,5 +1,9 @@
 def perimeter(n)
-  fib = Hash.new {|num, ind| num[ind] = ind > 1 ? fib[ind-2] + fib[ind-1] : ind}
-  fib[n+1]
-  fib.values.inject(:+) * 4
+  i = 2; a = []; a[0] = 1; a[1] = 1
+  while i <= n
+    a[i] = a[i-1] + a[i-2]
+    i += 1
+  end
+  a[n]
+  a.inject(:+) * 4
 end
