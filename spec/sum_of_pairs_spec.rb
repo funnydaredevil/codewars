@@ -11,7 +11,7 @@ describe "sum of pairs" do
   let(:l7) { [0, 2, 0] }
   let(:l8) { [5, 9, 13, -3] }
   let(:l9) { [13, 3] + Array.new(2_000_000, 1) + [8, -3] }
-  let(:l10) { [13, 4] + Array.new(1_000_000, 1) + [9,-3] + Array.new(1_000_000, 1) + [8, -3] }
+  let(:l10) { [13, 3] + Array.new(1_000_000, 1) + [6,7] + Array.new(1_000_000, 1) + [8, -3] }
   let(:l11) { [13, 3, 1] + Array.new(1_000_000, 1) + [6,7] + Array.new(1_000_000, 1) + [8, -3] }
 
   it "Basic tests" do
@@ -24,7 +24,7 @@ describe "sum of pairs" do
     expect(sum_pairs(l7, 0)).to eq [0, 0]
     expect(sum_pairs(l8, 10)).to eq [13, -3]
     expect(sum_pairs(l9, 13)).to eq nil
-    # expect(sum_pairs(l10, 6)).to eq [9, -3]
+    expect(sum_pairs(l10, 13)).to eq [6, 7]
     expect(sum_pairs(l11, 16)).to eq [13, 3]
   end
 end
